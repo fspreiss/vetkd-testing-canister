@@ -1,0 +1,17 @@
+{
+  "canisters": {
+    "vetkd_testing_canister": {
+      "candid": "vetkd_testing_canister.did",
+      "package": "vetkd_testing_canister",
+      "type": "rust",
+      "gzip": true
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "version": 1
+}

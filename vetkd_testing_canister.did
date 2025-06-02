@@ -1,0 +1,30 @@
+type canister_id = principal;
+
+type vetkd_curve = variant { bls12_381_g2 };
+
+type vetkd_public_key_args = record {
+  canister_id : opt canister_id;
+  context : blob;
+  key_id : record { curve : vetkd_curve; name : text }
+};
+
+type vetkd_public_key_result = record {
+  public_key : blob
+};
+
+type vetkd_derive_key_args = record {
+  input : blob;
+  context : blob;
+  transport_public_key : blob;
+  key_id : record { curve : vetkd_curve; name : text }
+};
+
+type vetkd_derive_key_result = record {
+  encrypted_key : blob
+};
+
+service : {
+  // Threshold key derivation
+  vetkd_public_key : (vetkd_public_key_args) -> (vetkd_public_key_result);
+  vetkd_derive_key : (vetkd_derive_key_args) -> (vetkd_derive_key_result)
+}
