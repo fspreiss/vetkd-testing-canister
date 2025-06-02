@@ -4,6 +4,12 @@
 
 * Subnet: [gmq5v-hbozq-uui6y-o55wc-ihop3-562wb-3qspg-nnijg-npqp5-he3cj-3ae](https://dashboard.internetcomputer.org/subnet/gmq5v-hbozq-uui6y-o55wc-ihop3-562wb-3qspg-nnijg-npqp5-he3cj-3ae)
 
+## Deploy
+
+```
+dfx deploy --network ic --identity fsp
+```
+
 ## Examples for calling the canister from the command line
 ```
 DFX_WARNING=-mainnet_plaintext_identity dfx canister call --network ic irf3a-oaaaa-aaaah-arfaq-cai vetkd_derive_key '(
