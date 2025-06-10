@@ -5,12 +5,6 @@ The vetKD testing canister is deployed on two subnets:
 * On subnet [fuqsr](https://dashboard.internetcomputer.org/subnet/fuqsr-in2lc-zbcjj-ydmcw-pzq7h-4xm2z-pto4i-dcyee-5z4rz-x63ji-nae) in canister [lhmvx-syaaa-aaaao-qkb6a-cai](https://dashboard.internetcomputer.org/canister/lhmvx-syaaa-aaaao-qkb6a-cai) ([Candid UI](https://a4gq6-oaaaa-aaaab-qaa4q-cai.raw.icp0.io/?id=lhmvx-syaaa-aaaao-qkb6a-cai))
 * On subnet: [gmq5v](https://dashboard.internetcomputer.org/subnet/gmq5v-hbozq-uui6y-o55wc-ihop3-562wb-3qspg-nnijg-npqp5-he3cj-3ae) in canister [irf3a-oaaaa-aaaah-arfaq-cai](https://dashboard.internetcomputer.org/canister/irf3a-oaaaa-aaaah-arfaq-cai) ([Candid UI](https://a4gq6-oaaaa-aaaab-qaa4q-cai.raw.icp0.io/?id=irf3a-oaaaa-aaaah-arfaq-cai))
 
-## Deploy
-
-```
-dfx deploy --network ic --identity fsp
-```
-
 ## Example calls
 
 ### vetkd_derive_key
