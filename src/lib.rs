@@ -1,4 +1,5 @@
 use candid::Principal;
+use futures::stream::{FuturesUnordered, StreamExt};
 use ic_cdk::management_canister::{
     VetKDCurve, VetKDDeriveKeyArgs, VetKDDeriveKeyResult, VetKDKeyId, VetKDPublicKeyArgs,
     VetKDPublicKeyResult,
@@ -35,18 +36,16 @@ async fn vetkd_derive_key_parallel(count: u16) -> u16 {
         },
     };
 
-    let mut calls = Vec::new();
-
-    for _i in 1..=count {
-        let future = async {
+    let futures = FuturesUnordered::new();
+    for _ in 1..=count {
+        futures.push(async {
             match ic_cdk::management_canister::vetkd_derive_key(&request).await {
                 Ok(_) => 1,
                 Err(_) => 0,
             }
-        };
-        calls.push(future);
+        });
     }
 
-    let results = futures::future::join_all(calls).await;
+    let results: Vec<_> = futures.collect().await;
     results.iter().sum()
 }
