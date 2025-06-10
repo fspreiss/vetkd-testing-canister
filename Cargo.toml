@@ -15,4 +15,7 @@ crate-type = ["lib", "cdylib"]
 
 [dependencies]
 candid = "0.10.14"
+futures = "0.3.31"
 ic-cdk = "0.18.2-alpha.1"
+ic-dummy-getrandom-for-wasm = "0.1.0"
+ic-vetkeys = "0.2.0"

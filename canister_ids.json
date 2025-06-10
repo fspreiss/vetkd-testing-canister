@@ -1,5 +1,8 @@
 {
   "vetkd_testing_canister": {
     "ic": "irf3a-oaaaa-aaaah-arfaq-cai"
+  },
+  "vetkd_testing_canister_fuqsr": {
+    "ic": "lhmvx-syaaa-aaaao-qkb6a-cai"
   }
 }

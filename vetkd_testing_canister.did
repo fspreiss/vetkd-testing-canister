@@ -26,5 +26,6 @@ type vetkd_derive_key_result = record {
 service : {
   // Threshold key derivation
   vetkd_public_key : (vetkd_public_key_args) -> (vetkd_public_key_result);
-  vetkd_derive_key : (vetkd_derive_key_args) -> (vetkd_derive_key_result)
+  vetkd_derive_key : (vetkd_derive_key_args) -> (vetkd_derive_key_result);
+  vetkd_derive_key_parallel : (nat16) -> (nat16)
 }
