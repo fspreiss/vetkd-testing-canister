@@ -32,7 +32,7 @@ async fn vetkd_derive_key_parallel(count: u16) -> u16 {
         transport_public_key: tsk.public_key(),
         key_id: VetKDKeyId {
             curve: VetKDCurve::Bls12_381_G2,
-            name: "test_key_1".to_string(),
+            name: "key_1".to_string(),
         },
     };
 

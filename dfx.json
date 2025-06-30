@@ -11,6 +11,12 @@
       "package": "vetkd_testing_canister",
       "type": "rust",
       "gzip": true
+    },
+    "vetkd_testing_canister_pzp6e": {
+      "candid": "vetkd_testing_canister.did",
+      "package": "vetkd_testing_canister",
+      "type": "rust",
+      "gzip": true
     }
   },
   "defaults": {
