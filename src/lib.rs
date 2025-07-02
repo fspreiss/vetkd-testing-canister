@@ -5,6 +5,7 @@ use ic_cdk::management_canister::{
     VetKDPublicKeyResult,
 };
 use ic_cdk::update;
+use std::u128;
 
 pub type CanisterId = Principal;
 
@@ -48,4 +49,18 @@ async fn vetkd_derive_key_parallel(count: u16) -> u16 {
 
     let results: Vec<_> = futures.collect().await;
     results.iter().sum()
+}
+
+#[update]
+async fn send_cycles_to_hu6ab(amount: u128) {
+    let hu6ab = Principal::from_text("hu6ab-5qaaa-aaaar-qbpkq-cai").unwrap();
+    ic_cdk::call::Call::unbounded_wait(hu6ab, "receive_cycles")
+        .with_cycles(amount)
+        .await
+        .expect("call to hu6ab's receive_cycles failed");
+}
+
+#[update]
+async fn receive_cycles() -> u128 {
+    ic_cdk::api::msg_cycles_accept(u128::MAX)
 }

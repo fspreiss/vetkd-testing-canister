@@ -27,5 +27,7 @@ service : {
   // Threshold key derivation
   vetkd_public_key : (vetkd_public_key_args) -> (vetkd_public_key_result);
   vetkd_derive_key : (vetkd_derive_key_args) -> (vetkd_derive_key_result);
-  vetkd_derive_key_parallel : (nat16) -> (nat16)
+  vetkd_derive_key_parallel : (nat16) -> (nat16);
+  send_cycles_to_hu6ab : (nat) -> ();
+  receive_cycles : () -> (nat)
 }
